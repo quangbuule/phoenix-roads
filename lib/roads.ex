@@ -53,9 +53,10 @@ defmodule Roads do
       File.stream!(file_path)
       |> Stream.map(&Regex.run(~r/\s*\/\*\*\s*\@checksum\s([0-9a-z]+)*/, &1))
       |> Stream.filter(fn(m) -> m != nil end)
-      |> Stream.map(&Enum.at(&1, 1))
+      |> Stream.take(1)
       |> Enum.to_list
       |> Enum.at(0)
+      |> Enum.at(1)
     else
       nil
     end
