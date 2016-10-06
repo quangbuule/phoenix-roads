@@ -2,7 +2,7 @@ defmodule Mix.Tasks.Compile.Roads do
   @default_config [
     out_file: "web/static/js/roads.js",
     camelcase: false,
-    global_name: "Roads"
+    global_name: nil
   ]
 
   def run(_args) do

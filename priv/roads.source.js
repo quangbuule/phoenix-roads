@@ -1,5 +1,6 @@
 /** @checksum __CHECKSUM__ */
-(function(root, payload) {
+/* eslint-disable */
+module.exports = (function(root, payload) {
   var queryStringify = (function () {
     // This code belongs to qs npm package: https://github.com/ljharb/qs
     var hexTable = (function () {
@@ -288,16 +289,5 @@
     tables[route.helper][route.opts] = buildPathHelper(route);
   });
 
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define([payload.globalName], factory);
-
-  } else if (typeof module !== 'undefined' && module.exports) {
-    // CommonJS
-    module.exports = Roads;
-
-  } else {
-    // Expose global
-    window[payload.globalName];
-  }
+  return Roads;
 })(window, __PAYLOAD__);

@@ -6,6 +6,7 @@ defmodule Roads do
     if checksum != last_checksum(config) do
       {:ok, source
         |> String.replace(~r/__PAYLOAD__/, payload)
+        |> expose_global(config[:global_name])
         |> String.replace(~r/__CHECKSUM__/, checksum)
       }
     else
@@ -35,6 +36,14 @@ defmodule Roads do
       "globalName" => config[:global_name],
       "camelcase" => config[:camelcase]
     }
+  end
+
+  def expose_global(content, global_name) do
+    if is_nil(global_name) do
+      content
+    else
+      String.replace(content, ~r/module.exports/, "window['#{global_name}']")
+    end
   end
 
   defp source do

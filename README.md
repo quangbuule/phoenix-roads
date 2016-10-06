@@ -37,7 +37,7 @@ Roads.blogCommentPath("index", 1, { sort: 'popular' }) // Output: /blogs/1/comme
 
   ```elixir
   def deps do
-    [{:roads, "~> 0.1.0"}]
+    [{:roads, "~> 0.1.1"}]
   end
   ```
   
@@ -74,5 +74,5 @@ Here is the default configurations, all are optional, only add when you need to:
 config :our_app, :roads,
   out_file: "web/static/js/roads.js", # Output file
   camelcase: false, # Change to true if you prefer to use camelCase rather than snake_case
-  global_name: "Roads" # Only available when you are not using CommonJS or RequireJS
+  global_name: nil # Will expose to window[global_name] when you want to use as standalone library.
 ```
