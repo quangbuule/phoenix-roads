@@ -28,7 +28,7 @@ We can change to use camelCase instead of snake_case (require configuration):
 import Roads from './roads';
 
 Roads.blogPath("show", 1) // Output: /blogs/1
-Roads.blogCommentPath("index", 1, { sort: 'popular' }) // Output: /blogs/1/
+Roads.blogCommentPath("index", 1, { sort: 'popular' }) // Output: /blogs/1/comments?sort=popular
 ```
 
 ## Installation
