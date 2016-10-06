@@ -72,7 +72,7 @@ Here is the default configurations, all are optional, only add when you need to:
 ```elixir
 # config/config.exs
 config :our_app, :roads,
-  out_file: "web/static/js/roads.js", // Output file
-  camelcase: false, // Change to true if you prefer to use camelCase rather than snake_case
-  global_name: "Roads" // Only available when you are not using CommonJS or RequireJS
+  out_file: "web/static/js/roads.js", # Output file
+  camelcase: false, # Change to true if you prefer to use camelCase rather than snake_case
+  global_name: "Roads" # Only available when you are not using CommonJS or RequireJS
 ```
